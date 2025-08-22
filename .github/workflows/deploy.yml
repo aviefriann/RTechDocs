@@ -1,0 +1,36 @@
+name: Deploy MkDocs
+
+on:
+  push:
+    branches:
+      - main # Jalankan kalau ada push ke branch main
+
+permissions:
+  contents: write
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: |
+          pip install mkdocs-material
+          pip install mkdocs-awesome-pages-plugin
+          pip install mkdocs-callouts
+          pip install mkdocs-table-reader-plugin
+          pip install mkdocs-copybutton-plugin
+          pip install mkdocs-git-revision-date-localized-plugin
+
+      - name: Build and Deploy
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./site
+          publish_branch: gh-pages
