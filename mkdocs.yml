@@ -1,0 +1,72 @@
+site_name: RTechDocs
+site_url: https://aviefriann.github.io/RTechDocs/
+repo_url: https://github.com/aviefriann/RTechDocs
+repo_name: aviefriann/RTechDocs
+
+theme:
+  name: material
+  features:
+    - navigation.instant
+    - navigation.tabs
+    - navigation.top
+    - search.highlight
+    - search.share
+    - content.code.copy
+    - content.tabs.link
+  palette:
+    - scheme: default
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to dark mode
+    - scheme: slate
+      toggle:
+        icon: material/weather-night
+        name: Switch to light mode
+  icon:
+    repo: fontawesome/brands/github
+  # (opsional) jika ada logo & favicon:
+  # logo: assets/logo.png
+  # favicon: assets/favicon.png
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - def_list
+  - footnotes
+  - md_in_html
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.inlinehilite
+  - pymdownx.highlight
+  - pymdownx.tabbed:
+      alternate_style: true
+
+plugins:
+  - search
+  - git-revision-date-localized:
+      fallback_to_build_date: true
+  - minify:
+      minify_html: true
+
+nav:
+  - Home: index.md
+  - Servers & Operating Systems:
+      - Ubuntu Server Static IP (Netplan): servers-os/ubuntu-static-ip-netplan.md
+      - Fix Repository Issues CentOS 7 EOL: servers-os/centos7-eol-repos.md
+      - Windows Optimize Performance (Windows 10 & 11): servers-os/windows-optimize-performance.md
+      - Univention Corporate Server Installation: servers-os/ucs-installation.md
+  - IT Management Applications & Tools:
+      - GLPI Install in Ubuntu 22.04: it-management/glpi-install-ubuntu-22-04.md
+      - Zabbix Install in Ubuntu 22.04: it-management/zabbix-install-ubuntu-22-04.md
+      - Tactical RMM Installation: it-management/tactical-rmm-installation.md
+      - Network Monitoring Mikrotik with Zabbix: it-management/mikrotik-zabbix-monitoring.md
+      - Active Directory Setup with Univention Corporate Server Installation: it-management/ad-setup-ucs.md
+  - Networking & Mikrotik:
+      - Basic Configuration Mikrotik: networking-mikrotik/basic-mikrotik-config.md
+      - Bandwidth Management Mikrotik with Queue Tree: networking-mikrotik/mikrotik-queue-tree-bandwidth.md
+      - Load Balance 2 ISP Mikrotik: networking-mikrotik/mikrotik-load-balance-2isp.md
+      - Failover 2 ISP Mikrotik: networking-mikrotik/mikrotik-failover-2isp.md
+      - Auto Backup Script Send with Email Mikrotik: networking-mikrotik/mikrotik-auto-backup-email.md
+  - Virtualization:
+      - Proxmox HA Installation: virtualization/proxmox-ha-installation.md
+      - Proxmox basic installation: virtualization/proxmox-basic-installation.md
