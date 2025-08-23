@@ -16,7 +16,7 @@ Navigate through the menu on the left or use the **search bar** at the top to qu
 
 - [Ubuntu Server Static IP (Netplan)](servers-os/ubuntu-static-ip-netplan.md)
 - [Fix Repository Issues CentOS 7 EOL](servers-os/centos7-eol-repos.md)
-- [Enable SSH Root Login Ubuntu 22.04] (enable-ssh-root-login-ubuntu-22-04.md)
+- [Enable SSH Root Login Ubuntu 22.04](servers-os/enable-ssh-root-login-ubuntu-22-04.md)
 
 ---
 
