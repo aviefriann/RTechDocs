@@ -1,0 +1,26 @@
+/* Clean cards like MkDocs Material */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.card {
+  background: var(--md-default-bg-color);
+  border: 1px solid var(--md-typeset-table-color);
+  border-radius: 10px;
+  padding: 1.2rem;
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  border-color: var(--md-primary-fg-color);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.08);
+  transform: translateY(-3px);
+}
+
+/* Hide only "Home" from left sidebar */
+.md-sidebar--primary nav ul li:first-child a[href="/"] {
+  display: none !important;
+}
