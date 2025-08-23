@@ -1,32 +1,67 @@
 site_name: RTechDocs
+site_description: Technical Documentation for Servers, Networking, IT Management, and Virtualization
+site_author: Avief Rian Nugroho
 site_url: https://aviefriann.github.io/RTechDocs/
+
 repo_url: https://github.com/aviefriann/RTechDocs
 repo_name: aviefriann/RTechDocs
+edit_uri: edit/main/docs/
 
 theme:
   name: material
+  language: en
   features:
+    # Navigation
     - navigation.instant
     - navigation.tabs
     - navigation.top
+    - navigation.sections
+    - navigation.expand
+    - navigation.footer
+    # Search
+    - search.suggest
     - search.highlight
     - search.share
+    # Content
     - content.code.copy
+    - content.code.annotate
     - content.tabs.link
+    - content.tooltips
+    - content.footnote.tooltips
+    # UI/UX
+    - header.autohide
+    - announce.dismiss
+    - toc.follow
   palette:
     - scheme: default
+      primary: indigo
+      accent: amber
       toggle:
         icon: material/weather-sunny
         name: Switch to dark mode
     - scheme: slate
+      primary: indigo
+      accent: amber
       toggle:
         icon: material/weather-night
         name: Switch to light mode
+  font:
+    text: "Inter"
+    code: "Fira Code"
   icon:
     repo: fontawesome/brands/github
-  # (opsional) jika ada logo & favicon:
-  # logo: assets/logo.png
-  # favicon: assets/favicon.png
+    edit: material/pencil
+    view: material/eye
+
+extra_css:
+  - assets/stylesheets/extra.css
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/aviefriann
+    - icon: fontawesome/brands/linkedin
+      link: https://linkedin.com/in/aviefrian
 
 markdown_extensions:
   - admonition
@@ -34,12 +69,16 @@ markdown_extensions:
   - def_list
   - footnotes
   - md_in_html
+  - toc:
+      permalink: true
   - pymdownx.details
   - pymdownx.superfences
   - pymdownx.inlinehilite
   - pymdownx.highlight
   - pymdownx.tabbed:
       alternate_style: true
+  - pymdownx.emoji:
+      emoji_generator: !!python/name:materialx.emoji.to_svg
 
 plugins:
   - search
