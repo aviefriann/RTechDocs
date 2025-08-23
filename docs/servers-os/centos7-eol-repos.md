@@ -12,7 +12,7 @@ This guide will show you how to configure the repository for a minimal CentOS 7 
 
 ## Steps to Configure the Repository
 
-### 1. Check Your CentOS Version
+### Step 1. Check Your CentOS Version
 
 First, verify that your CentOS version is `7.9.2009`. You can check the version with the following command:
 
@@ -22,7 +22,7 @@ cat /etc/redhat-release
 
 If it shows something like CentOS Linux release 7.9.2009, you can proceed with the configuration.
 
-### 2. Backup the Default Repository Configuration
+### Step 2. Backup the Default Repository Configuration
 
 Before making any changes, it's important to back up the current repository configuration file. This will allow you to restore it if necessary.
 
@@ -32,7 +32,7 @@ Run the following command to create a backup of the repository file:
 cp /etc/yum.repos.d/CentOS-Base.repo /etc/yum.repos.d/CentOS-Base.repo.backup
 ```
 
-### 3. Add the CentOS Vault Repository
+### Step 3. Add the CentOS Vault Repository
 
 Now, you will create a new .repo file for the CentOS Vault repository. Since you are using a minimal installation, you can use the vi editor (or nano if it's available) to create this new repository file.
 
@@ -78,7 +78,7 @@ gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-7
 
 After adding the content, save and exit the file `(esc -> :wq -> enter)` in vi.
 
-### 4. Clean the YUM Cache
+### Step 4. Clean the YUM Cache
 
 After adding the new repository configuration, clean the YUM cache to ensure the new repository settings are applied correctly:
 
@@ -86,7 +86,7 @@ After adding the new repository configuration, clean the YUM cache to ensure the
 yum clean all
 ```
 
-### 5. Run `yum update`
+### Step 5. Run `yum update`
 
 Once you have configured the new repository, it is important to update your system to ensure that you have the latest packages available from the CentOS Vault repository.
 
@@ -101,7 +101,7 @@ This will:
 - Check for updates for all installed packages.
 - Download and install any available updates, ensuring your system is up to date with the latest patches.
 
-### 6. Test the Configuration
+### Step 6. Test the Configuration
 
 Now, check that the repositories are set up correctly by running:
 
@@ -111,7 +111,7 @@ yum repolist
 
 You should see the `base`, `updates`, and `extras` repositories listed, all pointing to `vault.centos.org`.
 
-### 7. Install Essential Tools
+### Step 7. Install Essential Tools
 
 Since this is a minimal installation, you may not have tools like nano or wget. You can install them using the following command:
 
@@ -119,7 +119,7 @@ Since this is a minimal installation, you may not have tools like nano or wget. 
 yum install nano wget -y
 ```
 
-### 8. Enable Additional Repositories (Optional)
+### Step 8. Enable Additional Repositories (Optional)
 
 If you need additional repositories like `centosplus`, you can enable them by setting `enabled=1` in the configuration file.
 
